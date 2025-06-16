@@ -1,0 +1,926 @@
+/* Обновленный CSS */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #EAE3DD;
+}
+
+p {
+  color: white
+}
+
+ul { list-style-type: none; }  
+
+.hero_backgrong {
+  width: 100%;
+  height: 1080px;
+  background-image: url("mtc-img.png/image 15 (2).png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+
+
+/* Верхняя строка - имя и контакты */
+.header_top {
+  height: 80px;
+  
+  display: flex;
+  justify-content: center;
+  padding-top: 25px;
+}
+
+
+/* Левое верх - имя */
+.name {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Правое верх - контакты */
+.contact_header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.bot_blocks {
+  height: auto;
+
+  display: flex;
+  justify-content: center;
+
+  margin-top: 400px;
+}
+
+/* Центральный блок - прижат к левому краю по центру экрана */
+.title_sections {
+  padding-right: 500px;
+
+
+}
+
+/* Нижний блок - переход */
+.link_next {
+  padding-left: 500px;
+  padding-top: 300px;
+}
+
+/* Стили текста */
+.name p,
+.contact_header p {
+  color: white;
+  margin: 0;
+}
+
+.title_sections button {
+
+  
+
+  width: 350px; /* Фиксированная ширина 500px */
+  height: 80px; /* Фиксированная высота 50px */
+  background: #FFFFFF;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0; /* Убираем внутренние отступы */
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  
+  /* Мигающая тень по краям */
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  animation: pulse-border 1.5s infinite;
+}
+
+/* Анимация мигающей границы */
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* Эффекты при наведении */
+.title_sections button:hover {
+  transform: scale(1.05); /* Легкое увеличение */
+  animation: none; /* Останавливаем мигание */
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7); /* Постоянное свечение */
+}
+
+/* Эффект при нажатии */
+.title_sections button:active {
+  transform: scale(1.02) translateY(2px);
+}
+
+/* Стиль для фокуса */
+.title_sections button:focus {
+  outline: 2px solid #A32F2F;
+  outline-offset: 2px;
+}
+
+.title h1 {
+  color: white;
+  margin: 5px 0;
+
+/* Квартиры в новостройках по всей России */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 54px;
+  line-height: 66px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+
+}
+
+.title h3 {
+  color: white;
+  margin: 5px 0;
+
+/* Квартиры в новостройках по всей России */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 66px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+
+}
+
+/* red header */
+
+.red_header {
+  background-color: rgba(163, 47, 47, 1);
+  height: 80px;
+  
+  display: flex;
+  justify-content: center;
+  
+}
+
+.name {
+  padding-right: 500px;
+  /* ПЕРВЫЙ ОФИС НОВОСТРОЕК */
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+
+color: #FFFFFF;
+
+
+}
+
+.contact_header {
+  padding-left: 500px;
+ 
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+
+color: #FFFFFF;
+
+
+}
+
+/* section */
+
+
+.blocks {
+ display: flex;
+ justify-content:center
+}
+
+.red_block {
+  display: flex;
+  justify-content: space-between;
+
+  width: 1480px;
+  background-color: rgba(163, 47, 47, 1);
+
+  margin-top: 80px;
+}
+
+.qwiz_section {
+  color: white;
+  text-align: right;
+  padding-right: 80px;
+}
+
+.qwiz_section h1 {
+  /* Новостройки напрямую от застройщика */
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 46px;
+  text-align: right;
+  text-transform: uppercase;
+
+  margin-bottom: 50px;
+
+  color: #FFFFFF;
+}
+
+.qwiz_section li {
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: right;
+
+  color: #FFFFFF;
+
+}
+
+.qwiz_section ul li {
+  margin-bottom: 40px;
+}
+
+.qwiz_section button {
+
+  margin-left: 250px;
+
+  width: 500px; /* Фиксированная ширина 500px */
+  height: 50px; /* Фиксированная высота 50px */
+  background: #FFFFFF;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 29px;
+  color: #A32F2F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0; /* Убираем внутренние отступы */
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  
+  /* Мигающая тень по краям */
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  animation: pulse-border 1.5s infinite;
+}
+
+/* Анимация мигающей границы */
+@keyframes pulse-border {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* Эффекты при наведении */
+.qwiz_section button:hover {
+  transform: scale(1.05); /* Легкое увеличение */
+  animation: none; /* Останавливаем мигание */
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7); /* Постоянное свечение */
+}
+
+/* Эффект при нажатии */
+.qwiz_section button:active {
+  transform: scale(1.02) translateY(2px);
+}
+
+/* Стиль для фокуса */
+.qwiz_section button:focus {
+  outline: 2px solid #A32F2F;
+  outline-offset: 2px;
+}
+
+/* блок шести */
+
+.six_block {
+  width: 1030;
+  height: 600px;
+
+  display: flex;  
+  justify-content: center;  
+  align-items: center
+}
+
+.left_obj {
+  width: 180px;
+  height: 180px;
+  border-radius: 100%;
+  background-color: #A32F2F;
+  
+  /* Выравнивание текста */
+  display: flex;
+  align-items: center;
+  
+}
+
+.left_obj p {
+
+  /* Стили текста */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Полужирное начертание */
+  font-size: 15px; /* Размер подобран для соответствия оригинальным векторам */
+  line-height: 1.5; /* Оптимальное межстрочное расстояние */
+  color: #FFFFFF; /* Белый цвет как в векторах */
+  text-transform: uppercase; /* Капитализация как в оригинале */
+  letter-spacing: 1.5px; /* Расстояние между буквами */
+  
+ 
+  text-align: center; 
+  padding: 10px;
+}
+
+
+.six_icons {
+  display: grid;  
+  grid-template-columns: 1fr 1fr;
+  gap: 20px; /* Расстояние между элементами */
+  max-width: 820px;
+  margin: 80px ;
+}
+
+.container_six {
+  width: 390px;
+  height: 140px;
+  background-color: white;
+  border-radius: 10px;
+  display: flex; /* Делаем контейнер флексом */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Тень для глубины */
+  overflow: hidden; /* Чтобы скругления работали правильно */
+  transition: transform 0.3s ease; /* Анимация при наведении */
+}
+
+.container_six:hover {
+  transform: translateY(-5px); /* Поднимаем при наведении */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.icons_conteiner {
+  width: 130px;
+  height: 140px;
+  background-color: #A32F2F;
+  border-radius: 10px 0 0 10px; /* Скругляем только левые углы */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Запрещаем сжиматься */
+}
+
+.text_six {
+  padding: 15px;
+  flex-grow: 1; /* Занимает всё оставшееся пространство */
+  display: flex;
+  align-items: center;
+  overflow-y: auto; /* Скролл если текст не помещается */
+}
+
+.text_six p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #A32F2F;
+  margin: 0;
+}
+
+/* Стили для иконок */
+.icons_conteiner img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Делаем иконки белыми */
+}
+
+/* кнопка крассная и форма */
+
+.button_and_form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+.button_and_form button{
+
+  width: 610px; /* Фиксированная ширина 500px */
+  height: 70px; /* Фиксированная высота 50px */
+  background: #A32F2F;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 29px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0; /* Убираем внутренние отступы */
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  
+  /* Мигающая тень по краям */
+  box-shadow: 0 0 0 0 rgba(243, 0, 0, 0.7);
+  animation: pulse-borderr 1.5s infinite;
+}
+
+/* Анимация мигающей границы */
+  @keyframes pulse-borderr {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+
+/* Эффекты при наведении */
+.button_and_form button:hover {
+  transform: scale(1.05); /* Легкое увеличение */
+  animation: none; /* Останавливаем мигание */
+  box-shadow: 0 0 15px 5px rgba(248, 0, 0, 0.7); /* Постоянное свечение */
+}
+
+/* Эффект при нажатии */
+.button_and_form button:active {
+  transform: scale(1.02) translateY(2px);
+}
+
+/* Стиль для фокуса */
+.button_and_form button:focus {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.form_position {
+display: flex;
+justify-content: center;
+}
+
+.feedback-form {
+
+    width: 710px;
+    height: 500px;
+    background: #A32F2F;
+    backdrop-filter: blur(5.55px);
+    border-radius: 20px;
+    padding: 40px 60px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.form-subtitle {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 100%;
+    height: 41px;
+    background: transparent;
+    border: 2px solid #FBFBFB;
+    border-radius: 7px;
+    padding: 0 15px;
+    font-weight: 500;
+    font-size: 18px;
+    color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.consent-group {
+    margin-top: 40px;
+    position: relative;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.consent-checkbox {
+    width: 18px;
+    height: 18px;
+    background: #FBFBFB;
+    border-radius: 6px;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.consent-checkbox:checked::before {
+    content: '';
+    position: absolute;
+    width: 7.2px;
+    height: 8.64px;
+    border: 2px solid #000000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.consent-label {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.consent-link {
+    display: block;
+    font-size: 14px;
+    color: #FFFFFF;
+    text-decoration: underline;
+    margin-left: 0px;
+}
+
+.submit-btn {
+    position: absolute;
+    bottom: 40px;
+    background: none;
+    border: none;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 12px;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 0;
+    text-align: left;
+}
+
+.submit-btn::after {
+    content: '';
+    position: absolute;
+    width: 114px;
+    height: 2px;
+    bottom: -10px;
+    left: 0;
+    background: #D9D9D9;
+}
+
+
+
+
+
+
+
+/* скролл бар */
+
+.sertch_block {
+  height: 2000px; /* Фиксированная высота контейнера */
+  overflow-y: auto; /* Включаем вертикальный скролл */
+  padding-right: 20px; /* Отступ для компенсации ширины скроллбара */
+  background-color: white;
+  width: 500px;
+
+  /* Скрываем скроллбар для всех браузеров */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+
+}
+
+/* Скрываем скроллбар в Webkit-браузерах (Chrome, Safari) */
+.sertch_block::-webkit-scrollbar {
+  display: none;
+}
+
+.sertch_block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* .sertch_block li {
+  
+} */
+
+.sertch_block img {
+  display: block;
+  width: calc(100% - 40px); /* Учитываем горизонтальные отступы */
+  height: auto;
+  margin: 20px; /* Борты 20px со всех сторон */
+  border-radius: 30px;
+  object-fit: cover;
+  border: 8px solid rgba(204, 178, 163, 1);
+  box-sizing: border-box;
+}
+
+.sertch_block p {
+  margin-bottom: 12px;
+  padding: 5px 35px 5px 35px;
+  color:#A32F2F;
+
+  /* Команда профессионалов, которая уже более 13 лет предоставляет лучший сервис и подбирает индивидуальные решения для каждого. Наша цель — предоставить качественный сервис нашим клиентам от сделки до ключа. Мы сопровождаем сделки на каждом этапе, обеспечивая юридическую чистоту и полную информированность клиента. Мы не просто продаём квадратные метры — мы создаём сервис, к которому хочется возвращаться. Выбирая нас, вы выбираете опыт, честность и уверенность. */
+
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+
+}
+
+
+/* footer */
+
+     .footer-container {
+            position: relative;
+            width: auto;
+            max-width: 100%;
+            height: 665px;
+            background: #A32F2F;
+            
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .section-title {
+            position: absolute;
+            width: 100%;
+            height: 49px;
+            padding: 40px ;
+            margin: 0px;
+            text-align: center;
+            font-family: 'Montserrat';
+            font-weight: 800;
+            font-size: 40px;
+            line-height: 49px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+        }
+        
+        .content-wrapper {
+            display: flex;
+            height: 100%;
+            padding: 120px 60px 60px;
+        }
+        
+        .contact-section {
+            width: 50%;
+            padding-right: 40px;
+        }
+        
+        .map-section {
+            width: 50%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            margin-bottom: 25px;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 1.4;
+            color: #FFFFFF;
+            padding-left: 30px;
+            position: relative;
+            font-family: 'Montserrat';
+        }
+        
+        .contact-item i {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 20px;
+            color: #FFD700;
+        }
+        
+        .social-section {
+            margin-top: 40px;
+        }
+        
+        .social-title {
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 29px;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+            font-family: 'Montserrat';
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .social-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+        }
+        
+        .telegram { background-image: url(mtc-img.png/Vector\ \(2\).png); }
+        .vk { background-image: url(mtc-img.png/Vector\ \(1\).png) ; }
+        .whatsapp { background-image: url(mtc-img.png/Vector.png); }
+        
+        .social-icon i {
+            font-size: 30px;
+            color: white;
+        }
+        
+        .map-wrapper {
+            width: 100%;
+            height: 420px;
+            background: #CCB2A3;
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+        
+        #map {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-marker {
+            position: absolute;
+            width: 41px;
+            height: 48px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -100%);
+            z-index: 10;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+        
+        .marker-circle {
+            position: absolute;
+            width: 41px;
+            height: 41px;
+            background: #A32F2F;
+            border-radius: 50%;
+            transform: translateY(7px);
+        }
+        
+        .marker-dot {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: #FFFFFF;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .marker-label {
+            position: absolute;
+            padding: 5px 10px;
+            background: #FFFFFF;
+            border-radius: 4px 4px 4px 0px;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 800;
+            font-size: 10px;
+            color: #000000;
+            white-space: nowrap;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .company-info {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 0 20px;
+            font-family: 'Montserrat';
+        }
+        
+        @keyframes pulse {
+            0% { transform: translate(-50%, -100%) scale(1); }
+            50% { transform: translate(-50%, -100%) scale(1.1); }
+            100% { transform: translate(-50%, -100%) scale(1); }
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 1200px) {
+            .content-wrapper {
+                flex-direction: column;
+                padding: 100px 30px 40px;
+            }
+            
+            .contact-section, .map-section {
+                width: 100%;
+            }
+            
+            .map-section {
+                height: 400px;
+                margin-top: 40px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .contact-item {
+                font-size: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 26px;
+                top: 20px;
+            }
+            
+            .contact-item {
+                font-size: 18px;
+            }
+            
+            .map-wrapper {
+                height: 300px;
+            }
+        }
