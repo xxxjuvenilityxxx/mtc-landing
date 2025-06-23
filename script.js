@@ -2,7 +2,7 @@
 function sendDataToTelegram(formData) {
     const botToken = '8067615220:AAGOt8E8CQvjhj__ksZnrtXEHureHCN9Zj8'; // Токен вашего бота
     const chatId = '7228650776'; // ID получателя (пользователя)
-    const apiUrl = `https://web.telegram.org/k/#@Mtcqwiz_bot`; // URL для отправки сообщения
+    const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`; // URL для отправки сообщения
 
     // Формируем сообщение в формате HTML
     const message = `
@@ -37,14 +37,8 @@ form.addEventListener('submit', (e) => {
     e.preventDefault(); // Отменяем стандартное поведение формы
     if (validateForm()) { // Проверяем форму на валидность
         const formData = { // Собираем данные из формы
-            firstName: document.getElementById('firstName').value,
-            lastName: document.getElementById('lastName').value,
-            birthDate: document.getElementById('birthDate').value,
-            gender: document.querySelector('input[name="gender"]:checked').value,
-            hobbies: Array.from(hobbiesCheckboxes)
-                .filter(checkbox => checkbox.checked)
-                .map(checkbox => checkbox.nextElementSibling.textContent),
-            notes: document.getElementById('notes').value
+            name: document.getElementById('name').value,
+            phone: document.getElementById('birthDate').value,
         };
 
         // Показать состояние загрузки
