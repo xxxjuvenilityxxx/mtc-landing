@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         . "📱 Телефон: $phone\n\n"
         . date('Y-m-d H:i:s');
     
-    $url = "https://api.telegram.org/bot8067615220:AAE4nHwZp_mvWzr8BXQyWSqx8KtkDIWYbZc/sendMessage";
+    $url = "https://api.telegram.org/bot$botToken/sendMessage?chat_id=$chatId&$message";
     
     $data = [
         'chat_id' => $chatId,
