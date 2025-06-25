@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $botToken = '8067615220:AAE4nHwZp_mvWzr8BXQyWSqx8KtkDIWYbZc'; // Замените на ваш токен
-    $chatId = '-1002795685673'; // Замените на ваш chat ID
+    $botToken = '8067615220:AAE4nHwZp_mvWzr8BXQyWSqx8KtkDIWYbZc';
+    $chatId = '-1002795685673';
     
     $name = htmlspecialchars($_POST['name']);
     $phone = htmlspecialchars($_POST['phone']);
@@ -11,7 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         . "📱 Телефон: $phone\n\n"
         . date('Y-m-d H:i:s');
     
-    $url = "https://api.telegram.org/bot$botToken/sendMessage?chat_id=$chatId&$message";
+    // URL без параметров в строке запроса
+    $url = "https://api.telegram.org/bot$botToken/sendMessage";
     
     $data = [
         'chat_id' => $chatId,
@@ -30,10 +31,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $context = stream_context_create($options);
     $result = file_get_contents($url, false, $context);
     
+    // Детальная обработка ошибок
     if ($result === FALSE) {
-        echo "Ошибка отправки!";
+        $error = error_get_last();
+        echo "Ошибка отправки: " . $error['message'];
     } else {
-        echo "Сообщение отправлено!";
+        $response = json_decode($result, true);
+        if ($response['ok']) {
+            echo "Сообщение отправлено! ID: " . $response['result']['message_id'];
+        } else {
+            echo "Ошибка Telegram: " . $response['description'];
+        }
     }
 }
 ?>
