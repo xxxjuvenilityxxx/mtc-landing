@@ -1,6 +1,14 @@
 <?php
 header('Content-Type: application/json');
 
+// Разрешаем доступ только через POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    header('Allow: POST'); // Указываем разрешенный метод
+    echo json_encode(['error' => 'Только POST-запросы разрешены']);
+    exit;
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $botToken = '8067615220:AAE4nHwZp_mvWzr8BXQyWSqx8KtkDIWYbZc';
     $chatId = '-1002795685673';
