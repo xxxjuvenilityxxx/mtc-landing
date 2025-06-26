@@ -35,7 +35,7 @@
                             <h1>ПО ВСЕЙ РОССИИ</h1>
                             <h3>И ЗА РУБЕЖОМ</h3>
                         </div>
-                        <button class="button title_button">Начать подбор</button>
+                        <button class="button title_button" id="openQuizBtn">Начать подбор</button>
                     </div>
                     <!-- переход на следующий блок (правый нижний угол) -->
                     <div class="link_next">
@@ -79,7 +79,7 @@
                             <li>Трэйд-ин, получите новую квартиру в обмен на старую</li>
                             <li>Квартиры от 2 200 000₽</li>
                         </ul>
-                        <button>ПОЛУЧИТЬ ПЛАНИРОВКИ И ЦЕНЫ</button>
+                        <button id="openQuizBtn">ПОЛУЧИТЬ ПЛАНИРОВКИ И ЦЕНЫ</button>
                     </div>
                 </div>
     
@@ -153,7 +153,7 @@
     
                 </div> 
                 <div class="button_and_form">
-                    <button>ПОЛУЧИТЬ ПЛАНИРОВКИ И ЦЕНЫ</button>
+                    <button id="openQuizBtn">ПОЛУЧИТЬ ПЛАНИРОВКИ И ЦЕНЫ</button>
                 </div>
                     
                     <div class="form_position">
@@ -378,42 +378,458 @@
 </footer>
 
 
-
-
+<!-- HTML квиза -->
+<div class="quiz-modal" id="quizModal">
+    <div class="quiz-container">
+        <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quizProgressFill"></div>
+        </div>
+        
+        <div class="quiz-page-counter" id="quizPageCounter">1/5</div>
+        <button class="quiz-close" id="quizClose">&times;</button>
+        
+        <div class="quiz-scroll-container">
+            <!-- Страница 1 -->
+            <div class="quiz-page quiz-active-page" id="quizPage1">
+                <div class="quiz-header">
+                    <h1 class="quiz-title">Сколько комнат вы ищете?</h1>
+                </div>
+                
+                <div class="quiz-room-options">
+                    <div class="quiz-room-option" data-value="studio">
+                        <div class="quiz-room-image"></div>
+                        <div class="quiz-room-name">Студия</div>
+                        <div class="quiz-checkbox-container">
+                            <div class="quiz-custom-checkbox"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-room-option" data-value="one">
+                        <div class="quiz-room-image"></div>
+                        <div class="quiz-room-name">1-комнатная</div>
+                        <div class="quiz-checkbox-container">
+                            <div class="quiz-custom-checkbox"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-room-option" data-value="two">
+                        <div class="quiz-room-image"></div>
+                        <div class="quiz-room-name">2-комнатная</div>
+                        <div class="quiz-checkbox-container">
+                            <div class="quiz-custom-checkbox"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-room-option" data-value="three">
+                        <div class="quiz-room-image"></div>
+                        <div class="quiz-room-name">3+ комнаты</div>
+                        <div class="quiz-checkbox-container">
+                            <div class="quiz-custom-checkbox"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="quiz-nav-btn" id="quizNextBtn1" disabled>Далее</button>
+            </div>
+            
+            <!-- Страница 2 -->
+            <div class="quiz-page" id="quizPage2">
+                <div class="quiz-header">
+                    <h1 class="quiz-title">Когда планируете переезд?</h1>
+                </div>
+                
+                <div class="quiz-grid-options">
+                    <div class="quiz-grid-option" data-value="this-year">
+                        <div class="quiz-option-checkbox"></div>
+                        <div class="quiz-option-text">В этом году</div>
+                    </div>
+                    
+                    <div class="quiz-grid-option" data-value="2026">
+                        <div class="quiz-option-checkbox"></div>
+                        <div class="quiz-option-text">В следующем году</div>
+                    </div>
+                    
+                    <div class="quiz-grid-option" data-value="later">
+                        <div class="quiz-option-checkbox"></div>
+                        <div class="quiz-option-text">Позже</div>
+                    </div>
+                </div>
+                
+                <button class="quiz-nav-btn" id="quizNextBtn2" disabled>Далее</button>
+            </div>
+            
+            <!-- Страница 3 -->
+            <div class="quiz-page" id="quizPage3">
+                <div class="quiz-header">
+                    <h1 class="quiz-title">Ваш бюджет?</h1>
+                </div>
+                
+                <div class="quiz-grid-options">
+                    <div class="quiz-grid-option" data-value="1-3m">
+                        <div class="quiz-option-checkbox"></div>
+                        <div class="quiz-option-text">До 3 млн рублей</div>
+                    </div>
+                    
+                    <div class="quiz-grid-option" data-value="3-5m">
+                        <div class="quiz-option-checkbox"></div>
+                        <div class="quiz-option-text">3-5 млн рублей</div>
+                    </div>
+                    
+                    <div class="quiz-grid-option" data-value="5-10m">
+                        <div class="quiz-option-checkbox"></div>
+                        <div class="quiz-option-text">5-10 млн рублей</div>
+                    </div>
+                    
+                    <div class="quiz-grid-option" data-value="10m+">
+                        <div class="quiz-option-checkbox"></div>
+                        <div class="quiz-option-text">Более 10 млн рублей</div>
+                    </div>
+                </div>
+                
+                <button class="quiz-nav-btn" id="quizNextBtn3">Далее</button>
+            </div>
+            
+            <!-- Страница 4 -->
+            <div class="quiz-page" id="quizPage4">
+                <div class="quiz-searching-text">Идёт поиск лучших вариантов<br>Найдено предложений: 27</div>
+                
+                <div class="quiz-progress-container">
+                    <div class="quiz-progress-circle-bg"></div>
+                    <div class="quiz-progress-circle" id="quizProgressCircle"></div>
+                    <div class="quiz-progress-text" id="quizProgressText">0%</div>
+                </div>
+            </div>
+            
+            <!-- Страница 5 -->
+            <div class="quiz-page" id="quizPage5">
+                <div class="quiz-header">
+                    <h1 class="quiz-title">Получите подборку</h1>
+                </div>
+                
+                <div class="quiz-form-container">
+                    <form id="quizForm">
+                        <div class="quiz-form-group">
+                            <label class="quiz-form-label" for="quizName">Ваше имя</label>
+                            <input type="text" id="quizName" name="name" class="quiz-form-input" placeholder="Иван Иванов" required>
+                        </div>
+                        
+                        <div class="quiz-form-group">
+                            <label class="quiz-form-label" for="quizPhone">Ваш телефон</label>
+                            <div class="quiz-phone-input-container">
+                                <div class="quiz-phone-prefix">+7</div>
+                                <input type="tel" id="quizPhone" name="phone" class="quiz-form-input quiz-phone-input" 
+                                       placeholder="(900) 123-45-67" required 
+                                       pattern="[0-9]{10}" 
+                                       title="Введите 10 цифр номера">
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-form-group quiz-consent-group">
+                            <input type="checkbox" id="quizConsent" class="quiz-consent-checkbox" required>
+                            <label for="quizConsent" class="quiz-consent-label">
+                                Я соглашаюсь на обработку персональных данных согласно 
+                                <a href="#" class="quiz-consent-link">политике конфиденциальности</a>
+                            </label>
+                        </div>
+                        
+                        <div class="quiz-submit-btn-container">
+                            <div class="quiz-submit-btn-bg"></div>
+                            <button type="submit" class="quiz-submit-btn">Получить подборку</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <script>
+    // Обработчик основной формы
+    document.querySelector('form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const botToken = '8067615220:AAE4nHwZp_mvWzr8BXQyWSqx8KtkDIWYbZc';
+      const chatId = '-1002795685673';
+      
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      
+      const message = `📬 Новая заявка:%0A👤 Имя: ${name}%0A📱 Телефон: ${phone}`;
+      
+      const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}`;
+      
+      try {
+        await fetch(url);
+        alert('Данные отправлены!');
+        e.target.reset();
+      } catch (error) {
+        alert('Ошибка отправки');
+      }
+    });
 
-document.querySelector('form').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  
-  const botToken = '8067615220:AAE4nHwZp_mvWzr8BXQyWSqx8KtkDIWYbZc';
-  const chatId = '-1002795685673';
-  
-  const name = document.getElementById('name').value;
-  const phone = document.getElementById('phone').value;
-  
-  const message = `📬 Новая заявка:%0A👤 Имя: ${name}%0A📱 Телефон: ${phone}`;
-  
-  const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}`;
-  
-  try {
-    await fetch(url);
-    alert('Данные отправлены!');
-    e.target.reset();
-  } catch (error) {
-    alert('Ошибка отправки');
-  }
-});
-
+    // Скрипт квиза
+    document.addEventListener('DOMContentLoaded', function() {
+        // Элементы DOM квиза
+        const quizModal = document.getElementById('quizModal');
+        const quizClose = document.getElementById('quizClose');
+        const quizPages = document.querySelectorAll('.quiz-page');
+        const quizProgressFill = document.getElementById('quizProgressFill');
+        const quizPageCounter = document.getElementById('quizPageCounter');
+        
+        // Кнопки открытия квиза
+        const openQuizBtns = document.querySelectorAll('#openQuizBtn');
+        openQuizBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                quizModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+                updateQuizProgress(0);
+                updateQuizPageCounter(1);
+            });
+        });
+        
+        // Закрытие квиза
+        quizClose.addEventListener('click', function() {
+            quizModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            resetQuiz();
+        });
+        
+        // Закрытие при клике вне квиза
+        quizModal.addEventListener('click', function(e) {
+            if (e.target === quizModal) {
+                quizModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                resetQuiz();
+            }
+        });
+        
+        // Данные квиза
+        const quizData = {
+            rooms: null,
+            date: null,
+            budget: null
+        };
+        
+        // Страница 1: Выбор комнат
+        const roomOptions = document.querySelectorAll('#quizPage1 .quiz-room-option');
+        const quizNextBtn1 = document.getElementById('quizNextBtn1');
+        
+        roomOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Сброс выбора
+                roomOptions.forEach(opt => {
+                    opt.classList.remove('selected');
+                    opt.querySelector('.quiz-custom-checkbox').classList.remove('checked');
+                });
+                
+                // Установка выбора
+                this.classList.add('selected');
+                this.querySelector('.quiz-custom-checkbox').classList.add('checked');
+                
+                // Сохранение значения
+                quizData.rooms = this.getAttribute('data-value');
+                
+                // Активация кнопки
+                quizNextBtn1.disabled = false;
+            });
+        });
+        
+        // Переход на страницу 2
+        quizNextBtn1.addEventListener('click', function() {
+            showQuizPage(2);
+            updateQuizProgress(25);
+            updateQuizPageCounter(2);
+        });
+        
+        // Страница 2: Выбор времени
+        const dateOptions = document.querySelectorAll('#quizPage2 .quiz-grid-option');
+        const quizNextBtn2 = document.getElementById('quizNextBtn2');
+        
+        dateOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Сброс выбора
+                dateOptions.forEach(opt => {
+                    opt.classList.remove('selected');
+                    opt.querySelector('.quiz-option-checkbox').classList.remove('checked');
+                });
+                
+                // Установка выбора
+                this.classList.add('selected');
+                this.querySelector('.quiz-option-checkbox').classList.add('checked');
+                
+                // Сохранение значения
+                quizData.date = this.getAttribute('data-value');
+                
+                // Активация кнопки
+                quizNextBtn2.disabled = false;
+            });
+        });
+        
+        // Переход на страницу 3
+        quizNextBtn2.addEventListener('click', function() {
+            showQuizPage(3);
+            updateQuizProgress(50);
+            updateQuizPageCounter(3);
+        });
+        
+        // Страница 3: Выбор бюджета
+        const budgetOptions = document.querySelectorAll('#quizPage3 .quiz-grid-option');
+        const quizNextBtn3 = document.getElementById('quizNextBtn3');
+        
+        budgetOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                // Сброс выбора
+                budgetOptions.forEach(opt => {
+                    opt.classList.remove('selected');
+                    opt.querySelector('.quiz-option-checkbox').classList.remove('checked');
+                });
+                
+                // Установка выбора
+                this.classList.add('selected');
+                this.querySelector('.quiz-option-checkbox').classList.add('checked');
+                
+                // Сохранение значения
+                quizData.budget = this.getAttribute('data-value');
+                
+                // Активация кнопки
+                quizNextBtn3.disabled = false;
+            });
+        });
+        
+        // Переход на страницу 4
+        quizNextBtn3.addEventListener('click', function() {
+            showQuizPage(4);
+            updateQuizProgress(75);
+            updateQuizPageCounter(4);
+            startProgressAnimation();
+        });
+        
+        // Анимация прогресса на странице 4
+        function startProgressAnimation() {
+            const progressCircle = document.getElementById('quizProgressCircle');
+            const progressText = document.getElementById('quizProgressText');
+            let progress = 0;
+            
+            const animation = setInterval(() => {
+                progress += 1;
+                
+                if (progress <= 99) {
+                    // Обновление текста
+                    progressText.textContent = progress + '%';
+                    
+                    // Анимация круга
+                    const angle = (progress / 100) * 360;
+                    if (angle <= 180) {
+                        progressCircle.style.clipPath = `inset(0 0 0 50%)`;
+                        progressCircle.style.transform = `rotate(${angle}deg)`;
+                    } else {
+                        progressCircle.style.clipPath = `inset(0 50% 0 0)`;
+                        progressCircle.style.transform = `rotate(${angle}deg)`;
+                    }
+                } else {
+                    clearInterval(animation);
+                    
+                    // Переход на страницу 5 после завершения анимации
+                    setTimeout(() => {
+                        showQuizPage(5);
+                        updateQuizProgress(100);
+                        updateQuizPageCounter(5);
+                    }, 500);
+                }
+            }, 30);
+        }
+        
+        // Отправка формы квиза
+        const quizForm = document.getElementById('quizForm');
+        quizForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Сбор данных формы
+            const name = document.getElementById('quizName').value;
+            const phone = '+7' + document.getElementById('quizPhone').value;
+            
+            // Собираем данные квиза
+            const quizAnswers = `Комнаты: ${quizData.rooms}, Срок: ${quizData.date}, Бюджет: ${quizData.budget}`;
+            
+            const botToken = '8067615220:AAE4nHwZp_mvWzr8BXQyWSqx8KtkDIWYbZc';
+            const chatId = '-1002795685673';
+            
+            const message = `📬 Новая заявка из квиза:%0A👤 Имя: ${name}%0A📱 Телефон: ${phone}%0A${quizAnswers}`;
+            
+            const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}`;
+            
+            try {
+                await fetch(url);
+                alert('Данные отправлены! Мы свяжемся с вами в ближайшее время.');
+                quizForm.reset();
+                // Закрываем квиз
+                quizModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+                resetQuiz();
+            } catch (error) {
+                alert('Ошибка отправки. Пожалуйста, попробуйте ещё раз.');
+            }
+        });
+        
+        // Вспомогательные функции квиза
+        function showQuizPage(pageNumber) {
+            quizPages.forEach(page => {
+                page.classList.remove('quiz-active-page');
+            });
+            document.getElementById(`quizPage${pageNumber}`).classList.add('quiz-active-page');
+            
+            // Прокрутка вверх при смене страницы
+            document.querySelector('.quiz-scroll-container').scrollTop = 0;
+        }
+        
+        function updateQuizProgress(percent) {
+            quizProgressFill.style.width = percent + '%';
+        }
+        
+        function updateQuizPageCounter(page) {
+            quizPageCounter.textContent = `${page}/5`;
+        }
+        
+        function resetQuiz() {
+            // Сброс данных
+            quizData.rooms = null;
+            quizData.date = null;
+            quizData.budget = null;
+            
+            // Сброс выбора
+            document.querySelectorAll('.selected').forEach(el => {
+                el.classList.remove('selected');
+            });
+            
+            document.querySelectorAll('.checked').forEach(el => {
+                el.classList.remove('checked');
+            });
+            
+            // Сброс кнопок
+            quizNextBtn1.disabled = true;
+            quizNextBtn2.disabled = true;
+            quizNextBtn3.disabled = true;
+            
+            // Возврат на первую страницу
+            showQuizPage(1);
+            updateQuizProgress(0);
+            updateQuizPageCounter(1);
+            
+            // Сброс анимации прогресса
+            const progressCircle = document.getElementById('quizProgressCircle');
+            if (progressCircle) {
+                progressCircle.style.clipPath = 'inset(0 0 0 50%)';
+                progressCircle.style.transform = 'rotate(0deg)';
+            }
+            
+            const progressText = document.getElementById('quizProgressText');
+            if (progressText) {
+                progressText.textContent = '0%';
+            }
+        }
+    });
 </script>
-
-
-
-
-
-
-
 
 </body>
 </html>
