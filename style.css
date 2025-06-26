@@ -16,6 +16,15 @@ p {
 
 ul { list-style-type: none; }  
 
+
+
+.logo { 
+  width: 60px;
+  height: 60px;
+}
+
+
+
 .hero_backgrong {
   width: 100%;
   height: 1080px;
@@ -999,7 +1008,7 @@ justify-content: center;
             }
             
             .bot_blocks {
-                margin-top: 50px;
+                margin-top: 30px;
                 flex-direction: column;
                 align-items: center;
             }
@@ -1028,7 +1037,7 @@ justify-content: center;
             
             .link_next {
                 padding: 20px 0;
-                margin-top: 50px;
+                margin-top: 15px;
             }
             
             /* Красная шапка */
@@ -1645,14 +1654,14 @@ justify-content: center;
 
         .quiz-phone-prefix {
             position: absolute;
-            left: 12px;
+            /* left: 12px; */
             top: 50%;
             transform: translateY(-50%);
             font-size: 16px;
             color: #FFFFFF;
             background: #A32F2F;
             padding: 0 6px;
-            height: 35px;
+            height: 40px;
             display: flex;
             align-items: center;
             border-radius: 6px 0 0 6px;
@@ -1903,7 +1912,7 @@ justify-content: center;
             }
             
             .quiz-phone-prefix {
-                height: 30px;
+                /* height: 30px; */
                 font-size: 16px;
             }
             

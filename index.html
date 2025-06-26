@@ -17,7 +17,7 @@
                 <div class="header_top">
                     <!-- логотип и имя -->
                     <div class="name">
-                        <img src="mtc-img.png/Group 40.png" alt="logo">
+                        <img class="logo" src="mtc-img.png/IMG_аыфафы.png" alt="logo">
                         <p>ПЕРВЫЙ ОФИС НОВОСТРОЕК</p>
                     </div>
                     <!-- номер телефона и картинка -->
@@ -53,7 +53,7 @@
         <div class="red_header">
             <!-- логотип и имя -->
             <div class="name" id="section1">
-                <img src="mtc-img.png/Group 40.png" alt="logo">
+                <img class="logo" src="mtc-img.png/IMG_аыфафы.png" alt="logo">
                 <p>ПЕРВЫЙ ОФИС НОВОСТРОЕК</p>
             </div>
             <!-- номер телефона и картинка -->
@@ -386,7 +386,6 @@
         </div>
         
         <div class="quiz-page-counter" id="quizPageCounter">1/5</div>
-        <button class="quiz-close" id="quizClose">&times;</button>
         
         <div class="quiz-scroll-container">
             <!-- Страница 1 -->
@@ -543,7 +542,6 @@
     </div>
 </div>
 
-
 <script>
     // Обработчик основной формы
     document.querySelector('form').addEventListener('submit', async (e) => {
@@ -572,7 +570,6 @@
     document.addEventListener('DOMContentLoaded', function() {
         // Элементы DOM квиза
         const quizModal = document.getElementById('quizModal');
-        const quizClose = document.getElementById('quizClose');
         const quizPages = document.querySelectorAll('.quiz-page');
         const quizProgressFill = document.getElementById('quizProgressFill');
         const quizPageCounter = document.getElementById('quizPageCounter');
@@ -586,13 +583,6 @@
                 updateQuizProgress(0);
                 updateQuizPageCounter(1);
             });
-        });
-        
-        // Закрытие квиза
-        quizClose.addEventListener('click', function() {
-            quizModal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-            resetQuiz();
         });
         
         // Закрытие при клике вне квиза
